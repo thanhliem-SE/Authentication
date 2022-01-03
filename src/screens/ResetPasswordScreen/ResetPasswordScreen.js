@@ -4,10 +4,12 @@ import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimen
 import CustomInput from '../../components/CustomInput/CustomInput'
 import CustomButton from '../../components/CustomButton/CustomButton'
 import SocialSignInButtons from '../../components/SocialSignInButtons/SocialSignInButtons'
-const ConfirmEmailScreen = () => {
+const ResetPasswordScreen = () => {
     const [confirmCode, setConfirmCode] = useState("");
+    const [password, setPassword] = useState("");
 
-    const onConfirmPress = () => {
+
+    const onSendPress = () => {
         console.warn("onConfirmPress");
     }
 
@@ -22,10 +24,10 @@ const ConfirmEmailScreen = () => {
     return (
         <ScrollView>
             <View style={styles.root}>
-                <Text style={styles.title}>Confirm your email</Text>
-                <CustomInput placeholder="Enter you confirmation code" value={confirmCode} setValue={setConfirmCode} />
-                <CustomButton text="Confirm" onPress={onConfirmPress} />
-                <CustomButton text="Resend Code" onPress={onResendCodePress} type="SECONDARY" />
+                <Text style={styles.title}>Reset Password</Text>
+                <CustomInput placeholder="Code" value={confirmCode} setValue={setConfirmCode} />
+                <CustomInput placeholder="Enter your new password" value={password} setValue={setPassword} />
+                <CustomButton text="Submit" onPress={onSendPress} />
                 <CustomButton text="Back to Sign In" onPress={onSignInPress} type="TERTIARY" />
             </View>
         </ScrollView>
@@ -59,6 +61,6 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ConfirmEmailScreen
+export default ResetPasswordScreen
 
 
