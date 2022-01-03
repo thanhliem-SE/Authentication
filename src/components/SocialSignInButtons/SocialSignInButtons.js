@@ -18,7 +18,6 @@ const SocialSignInButtons = () => {
     const onSignUpPress = () => {
         console.warn("onSignUpPress");
     }
-
     return (
         <View style={{ width: '100%' }}>
             <CustomButton text="Sign In with Facebook" onPress={onSignInFacebook} bgColor="#E7EAF4" fgColor="#4765A9" />

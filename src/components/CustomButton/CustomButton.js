@@ -34,11 +34,18 @@ const styles = StyleSheet.create({
     },
     container_TERTIARY: {
     },
+    container_SECONDARY: {
+        borderColor: 'dodgerblue',
+        borderWidth: 2,
+    },
     text: {
         fontWeight: "bold",
     },
     text_PRIMARY: {
         color: "white",
+    },
+    text_SECONDARY: {
+        color: "dodgerblue",
     },
     text_TERTIARY: {
     },
