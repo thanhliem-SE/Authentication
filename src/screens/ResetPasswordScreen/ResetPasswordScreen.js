@@ -1,24 +1,22 @@
 import React, { useState } from 'react'
 import { View, Text, Image, StyleSheet, ScrollView } from 'react-native'
-import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions'
+import { useNavigation } from '@react-navigation/core'
 import CustomInput from '../../components/CustomInput/CustomInput'
 import CustomButton from '../../components/CustomButton/CustomButton'
-import SocialSignInButtons from '../../components/SocialSignInButtons/SocialSignInButtons'
 const ResetPasswordScreen = () => {
     const [confirmCode, setConfirmCode] = useState("");
     const [password, setPassword] = useState("");
 
+    const navigation = useNavigation();
 
     const onSendPress = () => {
-        console.warn("onConfirmPress");
+        // validate
+        navigation.navigate("HomeScreen");
     }
 
-    const onResendCodePress = () => {
-        console.warn("onResendCodePress");
-    }
 
     const onSignInPress = () => {
-        console.warn("onSignInPress");
+        navigation.navigate("SignInScreen");
     }
 
     return (

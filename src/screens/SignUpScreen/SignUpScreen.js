@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { View, Text, Image, StyleSheet, ScrollView } from 'react-native'
-import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimensions'
+import { useNavigation } from '@react-navigation/core'
 import CustomInput from '../../components/CustomInput/CustomInput'
 import CustomButton from '../../components/CustomButton/CustomButton'
 import SocialSignInButtons from '../../components/SocialSignInButtons/SocialSignInButtons'
@@ -10,9 +10,11 @@ const SignUpScreen = () => {
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
 
+    const navigation = useNavigation();
 
     const onRegisterPressed = () => {
-        console.warn("onRegisterPressed");
+        //validate
+        navigation.navigate("ConfirmEmailScreen")
     }
 
     const onPrivacyPolicy = () => {
@@ -24,7 +26,7 @@ const SignUpScreen = () => {
     }
 
     const onSignInPress = () => {
-        console.warn("onSignInPress");
+        navigation.navigate("SignInScreen");
     }
 
     return (
