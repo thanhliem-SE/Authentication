@@ -4,7 +4,7 @@ import useWindowDimensions from 'react-native/Libraries/Utilities/useWindowDimen
 import Logo from '../../../assets/images/logo.png'
 import CustomInput from '../../components/CustomInput/CustomInput'
 import CustomButton from '../../components/CustomButton/CustomButton'
-
+import SocialSignInButtons from '../../components/SocialSignInButtons/SocialSignInButtons'
 const SignInScreen = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -18,18 +18,6 @@ const SignInScreen = () => {
 
     const onForgotPasswordPressed = () => {
         console.warn("onForgotPasswordPressed");
-    }
-
-    const onSignInFacebook = () => {
-        console.warn("onSignInFacebook");
-    }
-
-    const onSignInGoogle = () => {
-        console.warn("onSignInGoogle");
-    }
-
-    const onSignInApple = () => {
-        console.warn("onSignInApple");
     }
 
     const onSignUpPress = () => {
@@ -46,9 +34,7 @@ const SignInScreen = () => {
                 <CustomInput placeholder="Password" value={password} setValue={setPassword} secureTextEntry />
                 <CustomButton text="Sign in" onPress={onSignInPressed} />
                 <CustomButton text="Forgot password?" onPress={onForgotPasswordPressed} type="TERTIARY" />
-                <CustomButton text="Sign In with Facebook" onPress={onSignInFacebook} bgColor="#E7EAF4" fgColor="#4765A9" />
-                <CustomButton text="Sign In with Google" onPress={onSignInGoogle} bgColor="#FAE9EA" fgColor="#DD4D44" />
-                <CustomButton text="Sign In with Apple" onPress={onSignInApple} bgColor="#e3e4e4" fgColor="#363636" />
+                <SocialSignInButtons />
                 <CustomButton text="Don't have an account? Create one" onPress={onSignUpPress} type="TERTIARY" />
 
             </View>
